@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>index</title>
+<link rel="stylesheet" type="text/css" href="allBanka.css" />
+<script  src="Js/login.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+#header {
+	background-color: #E2E8EF;
+	clear: none;
+	float: left;
+	min-height: 70px;
+	width: 100%;
+	margin-bottom: 20px;
+	color: #476487;
+	padding: 1px;
+	font-size:1.3vw;
+
+}
+#body {
+	clear: none;
+	float: left;
+	min-height: 400px;
+	width: 100%;
+	background-color: #F3F5F8;
+	border-radius: 5%;
+	color: #6A86AE;
+	font-size: 24px;
+	padding: 0px;
+	text-align: center;
+	height: 200px;
+	font-size:2vw;
+}
+#login {
+	background-color: #E2E8EF;
+	float: right;
+	height: 50px;
+	width: 15%;
+	padding-top: 20px;
+	text-align: center;
+}
+#header_title{
+	background-color: #E2E8EF;
+	clear: none;
+	float: left;
+	height: 70px;
+	width: 75%;
+	text-align: right;
+}
+@media only screen and (max-width: 640px) {
+	table{
+		width:100%;
+		
+		}
+}
+</style>
+</head>
+
+<body background="backgrounds.jpg">
+<div id="header">
+  <div id="header_title">
+  <h1>YOU ARE WELCOME TO BANKA APPLICATION    </h1></div>
+  <div id="login"><a href="login.html"><button>SignIn</button></a><button type="button" onClick="select_announce()">SignUp</button>
+    <p>&nbsp;</p>
+  </div>
+</div>
+<div id="body">
+
+<form name="login" action="" method="post">
+  
+    <div id="wrap">
+    <div id="title">login</div>
+    <div id="form_div">
+        <label>Your E-mail* </label>
+        <br/>
+        <input class="form" type="email" name="email" id="Login_email" required placeholder="Enter Your E-mail" /> <br/>
+      <label>Your Password* </label>
+        <br/>
+        <input class="form" type="password" name="date" id="Login_pass_word" required  onKeyPress="login_validate()" /><br/>
+      <div id="message"> ---MESSAGE GOES HERE---</div>
+    </div>
+    <div id="button">
+    <input type="reset" name="reset" /><input type="submit" name="save" id="save"/>
+  
+    </div>
+    
+    </div>
+     
+
+</form>
+
+
+    </div>
+<script>
+function eric()
+{
+alert("salama"); }
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("wrap").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "shema.txt", true);
+  xhttp.send();
+}
+
+function select_announce() {
+   
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("body").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","shema.text",true);
+        xmlhttp.send();
+    }
+</script>
+</body>
+</html>
